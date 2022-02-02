@@ -31,3 +31,11 @@ will edit each 30 second until it reach to zero;
 ### pictures
 
 ![countdown](https://s6.uupload.ir/files/counter_3ggw.gif)
+
+
+
+
+### deploy
+
+you can simply deploy this bot, just get an token from *@BotFather*
+and put the token in the *main.py* file at the `token` variable
