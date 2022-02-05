@@ -12,24 +12,24 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 TOKEN = "token removed, got yours"
 
 # Functions
-def timer(second=0, minute=0, hour=0, end_msg:str='', chn=str):
+def timer(second=0, minute=0, hour=0, end_msg:str="", chn=str):
     interval = second + (minute*60) + (hour*3600)  
-    tmp = bot.send_message(chat_id=chn, text=f'{left(interval)} {end_msg}')
+    tmp = bot.send_message(chat_id=chn, text=f"{left(interval)} {end_msg}")
 
     while(interval>0):
-        print(f'{left(interval)} left')
+        print(f"{left(interval)} left")
         time.sleep(30)
         interval -= 30
         if(interval > 0):
-            tmp.edit_text(f'{left(interval)} {end_msg}')
+            tmp.edit_text(f"{left(interval)} {end_msg}")
         else:
-            tmp.edit_text(f'0 seconds {end_msg}')
+            tmp.edit_text(f"0 seconds {end_msg}")
 
 def sec(update, context):
     global toggeled
 
     if(toggeled):
-        h, m, s, msg, chn = update.message.text.split(':')
+        h, m, s, msg, chn = update.message.text.split(":")
 
         h = int(h)
         m = int(m)
@@ -49,7 +49,7 @@ def sec(update, context):
             threads.append(t)
             t.start()
         else:
-            update.message.reply_text('you are not the admin of this chat')
+            update.message.reply_text("You are not the admin of this chat")
 
 def start(update, context):
     global toggeled
@@ -57,13 +57,13 @@ def start(update, context):
     toggeled = True
     update.message.reply_text(
 """
-well, this bot will countdown until a specified interval for a channel or group.
+Well, this bot will countdown until a specified interval for a channel or group.
 
-specify a exact interval to countdown.
+Specify a exact interval to countdown.
 
 # hour:minute:second:your message:@ChannelID
-for example for one hour and 4 minute and 30 second:
 
+For example for one hour and 4 minute and 30 second:
 1:0:30:to start meeting:@ChannelID
 """)
     print(update.message.text)
@@ -71,13 +71,13 @@ for example for one hour and 4 minute and 30 second:
 def rg_chl(update, context):
     pass
     # global chn
-    # chn = ''
-    # chn = update.message.text.split(' ')[1]
+    # chn = ""
+    # chn = update.message.text.split(" ")[1]
     # update.message.reply_text("channel username registered")
 
 # Start point
 if __name__ == "__main__":
-    print('Starting.')
+    print("Starting.")
 
     threads = list()
     toggeled = True
