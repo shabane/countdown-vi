@@ -7,16 +7,13 @@ from traceback import print_tb
 from humanfriendly import format_timespan as left
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-token = "token removed, got yours"
+TOKEN = "token removed, got yours"
 
 def timer(second=0, minute=0, hour=0, end_msg:str='', chn=str):
-    
     interval = second + (minute*60) + (hour*3600)  
-    
     tmp = bot.send_message(chat_id=chn, text=f'{left(interval)} {end_msg}')
-    
+
     while(interval>0):
-        
         print(f'{left(interval)} left')
         time.sleep(30)
         interval -= 30
@@ -27,20 +24,20 @@ def timer(second=0, minute=0, hour=0, end_msg:str='', chn=str):
 
 def sec(update, context):
     global toggeled
+
     if(toggeled):
-                
         h, m, s, msg, chn = update.message.text.split(':')
-        
+
         h = int(h)
         m = int(m)
         s = int(s)
         msg = msg.strip()
         chn = chn.strip()
+
         user = update.message.chat.username
         adminds = []
-        
-        
-        ## getting admins username
+
+        ## Getting admins username
         for i in bot.get_chat_administrators(chat_id=chn):
             adminds.append(i.user.username)
         
@@ -51,9 +48,9 @@ def sec(update, context):
         else:
             update.message.reply_text('you are not the admin of this chat')
 
-
 def start(update, context):
     global toggeled
+
     toggeled = True
     update.message.reply_text(
 """
@@ -77,13 +74,13 @@ def rg_chl(update, context):
     # update.message.reply_text("channel username registered")
 
 if __name__ == "__main__":
-    print('starting.')
+    print('Starting.')
 
     threads = list()
     toggeled = True
 
-    bot = telegram.Bot(token=token)
-    updater = Updater(token)
+    bot = telegram.Bot(token=TOKEN)
+    updater = Updater(TOKEN)
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
