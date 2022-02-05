@@ -14,7 +14,7 @@ The channel-id use for sending the countdown to, and the countdown message will 
 #hour:minute:second:message:@channelID
 ```
 
-## Example
+### Example
 
 1. to countdown for 1 hour and 30 minute and 59 second
 	- `1:30:59:to start meeting:@channelID`
@@ -28,6 +28,14 @@ The channel-id use for sending the countdown to, and the countdown message will 
 ### Preview
 
 ![countdown](preview.gif)
+
+## Installing
+
+You can activate your virtualenv and:
+
+```bash
+$ pip install -r requirements.txt
+```
 
 ### Deploy
 
