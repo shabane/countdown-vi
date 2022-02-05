@@ -88,17 +88,16 @@ def rg_chl(update, context):
     # chn = update.message.text.split(' ')[1]
     # update.message.reply_text("channel username registered")
 
+if __name__ == "__main__":
+    updater = Updater(token)
 
+    dispatcher = updater.dispatcher
 
-updater = Updater(token)
+    dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(CommandHandler("regester", rg_chl))
+    dispatcher.add_handler(MessageHandler(Filters.text, sec))
 
-dispatcher = updater.dispatcher
+    updater.start_polling()
 
-dispatcher.add_handler(CommandHandler("start", start))
-dispatcher.add_handler(CommandHandler("regester", rg_chl))
-dispatcher.add_handler(MessageHandler(Filters.text, sec))
-
-updater.start_polling()
-
-updater.idle()
+    updater.idle()
 
