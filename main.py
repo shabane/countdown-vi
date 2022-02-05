@@ -7,6 +7,8 @@ from traceback import print_tb
 from humanfriendly import format_timespan as left
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
+token = "token removed, got yours"
+
 def timer(second=0, minute=0, hour=0, end_msg:str='', chn=str):
     
     interval = second + (minute*60) + (hour*3600)  
@@ -22,10 +24,6 @@ def timer(second=0, minute=0, hour=0, end_msg:str='', chn=str):
             tmp.edit_text(f'{left(interval)} {end_msg}')
         else:
             tmp.edit_text(f'0 seconds {end_msg}')
-
-    
-
-threads = list()
 
 def sec(update, context):
     global toggeled
@@ -80,12 +78,12 @@ def rg_chl(update, context):
 
 if __name__ == "__main__":
     print('starting.')
-    token = "token removed, got yours"
+
+    threads = list()
     toggeled = True
+
     bot = telegram.Bot(token=token)
-
     updater = Updater(token)
-
     dispatcher = updater.dispatcher
 
     dispatcher.add_handler(CommandHandler("start", start))
@@ -93,6 +91,4 @@ if __name__ == "__main__":
     dispatcher.add_handler(MessageHandler(Filters.text, sec))
 
     updater.start_polling()
-
     updater.idle()
-
