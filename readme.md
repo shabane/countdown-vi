@@ -27,7 +27,7 @@ The channel-id use for sending the countdown to, and the countdown message will 
 
 ### Preview
 
-![countdown](https://s6.uupload.ir/files/counter_3ggw.gif)
+![countdown](preview.gif)
 
 ### Deploy
 
