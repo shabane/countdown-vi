@@ -39,4 +39,4 @@ $ pip install -r requirements.txt
 
 ### Deploy
 
-You can simply deploy this bot, just get an token from [*@BotFather*](https://t.me/BotFather) and put the token in the `main.py` file at the `token` variable.
+You can simply deploy this bot, just get a token from [*@BotFather*](https://t.me/BotFather) and put the token in the `main.py` file at the `token` variable.
