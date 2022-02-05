@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+# Libraries
 import threading
 import time
 import telegram
@@ -7,8 +8,10 @@ from traceback import print_tb
 from humanfriendly import format_timespan as left
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
+# Config
 TOKEN = "token removed, got yours"
 
+# Functions
 def timer(second=0, minute=0, hour=0, end_msg:str='', chn=str):
     interval = second + (minute*60) + (hour*3600)  
     tmp = bot.send_message(chat_id=chn, text=f'{left(interval)} {end_msg}')
@@ -65,7 +68,6 @@ for example for one hour and 4 minute and 30 second:
 """)
     print(update.message.text)
 
-
 def rg_chl(update, context):
     pass
     # global chn
@@ -73,6 +75,7 @@ def rg_chl(update, context):
     # chn = update.message.text.split(' ')[1]
     # update.message.reply_text("channel username registered")
 
+# Start point
 if __name__ == "__main__":
     print('Starting.')
 
