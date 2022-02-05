@@ -2,20 +2,10 @@
 
 import threading
 import time
+import telegram
 from traceback import print_tb
 from humanfriendly import format_timespan as left
-import telegram
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
-print('starting.')
-
-token = "token removed, got yours"
-
-
-
-
-toggeled = True
-bot = telegram.Bot(token=token)
 
 def timer(second=0, minute=0, hour=0, end_msg:str='', chn=str):
     
@@ -89,6 +79,11 @@ def rg_chl(update, context):
     # update.message.reply_text("channel username registered")
 
 if __name__ == "__main__":
+    print('starting.')
+    token = "token removed, got yours"
+    toggeled = True
+    bot = telegram.Bot(token=token)
+
     updater = Updater(token)
 
     dispatcher = updater.dispatcher
