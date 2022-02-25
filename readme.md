@@ -1,21 +1,20 @@
 # countdown-vi
 
-this is a telegram bot which programed to countdown.
+This is a telegram bot which programed to countdown.
 
+## Usage
 
-### usage
+Well, first you should specify a exact interval.
 
-well, first you should specify a exact interval.
-there is 5 column, very first three columns represent a time interval,
-and last two column represent for a messaga and a channel id.
-the channel-id use for sending the countdown to, and the countdown message
-will edit each 30 second until it reach to zero;
+There is 5 column, very first three columns represent a time interval, and last two column represent for a messaga and a channel id.
 
-`#hour:minute:second:message:@channelID`
+The channel-id use for sending the countdown to, and the countdown message will edit each 30 second until it reach to zero;
 
+```
+#hour:minute:second:message:@channelID
+```
 
-
-### example
+### Example
 
 1. to countdown for 1 hour and 30 minute and 59 second
 	- `1:30:59:to start meeting:@channelID`
@@ -26,16 +25,18 @@ will edit each 30 second until it reach to zero;
 3. you can just specify a second, to be more *on time*
 	- `0:0:3600:to lunch the project:@channelID`
 
+### Preview
 
+![countdown](preview.gif)
 
-### pictures
+## Installing
 
-![countdown](https://s6.uupload.ir/files/counter_3ggw.gif)
+You can activate your virtualenv and:
 
+```bash
+$ pip install -r requirements.txt
+```
 
+### Deploy
 
-
-### deploy
-
-you can simply deploy this bot, just get an token from *@BotFather*
-and put the token in the *main.py* file at the `token` variable
+You can simply deploy this bot, just get a token from [*@BotFather*](https://t.me/BotFather) and put the token in the `main.py` file at the `token` variable.
